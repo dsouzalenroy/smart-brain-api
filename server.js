@@ -21,19 +21,13 @@ const db = knex({
 });
 
 
-// db.select('*').table('users').then(data => {
-//   console.log(data);
-// });
-
-
 const app = express();
 
-
-app.use(cors());
+app.use(cors())
 app.use(bodyParser.json());
 
 
-app.get('/', (req, res) =>{res.send('it is working') })//database variable no longer exists
+app.get('/', (req, res) =>{ res.send('it is working') })//database variable no longer exists
 // app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)})
 // the above line can also be written as below
 app.post('/signin', signin.handleSignin(db, bcrypt))
