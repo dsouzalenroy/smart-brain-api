@@ -33,7 +33,7 @@ app.use(cors());
 
 
 
-app.get('/', (req, res) =>{res.send('it is working') })//database variable no longer exists
+// app.get('/', (req, res) =>{res.send('it is working') })//database variable no longer exists
 // app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)})
 // the above line can also be written as below
 app.post('/signin', signin.handleSignin(db, bcrypt))
@@ -44,5 +44,5 @@ app.post('/imageurl', (req, res) =>{image.handleAPICall(req, res)})
 
 
 app.listen(process.env.PORT || 3000, () =>{
-  console.log('app is running on port  ${process.env.PORT}');
+  console.log(`app is running on port  ${process.env.PORT}`);
 })
